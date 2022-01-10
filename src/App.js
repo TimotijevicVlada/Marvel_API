@@ -2,7 +2,6 @@ import { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import "./App.css";
 import Caracters from "./components/Caracters";
-import Footer from "./components/Footer";
 import Bookmarked from "./components/Bookmarked";
 import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -42,7 +41,7 @@ function App() {
     getData();
   }, [getData]);
 
-  //Function that get marvel from storage
+  //Function that get bookmarked marvel from storage
   const getMarvel = () => {
     if (localStorage.getItem("marvel") === null) {
       localStorage.setItem("marvel", JSON.stringify([]));
@@ -55,7 +54,7 @@ function App() {
     getMarvel();
   }, []);
 
-  //Function that save marvel to local storage
+  //Function that save bookmarked marvel to local storage
   const setMarvel = useCallback(() => {
     localStorage.setItem("marvel", JSON.stringify(bookmark));
   }, [bookmark]);
@@ -67,7 +66,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar />
+        <Navbar bookmark={bookmark} />
         <Routes>
           <Route
             path="/"
@@ -88,7 +87,6 @@ function App() {
             }
           />
         </Routes>
-        <Footer />
       </div>
     </Router>
   );

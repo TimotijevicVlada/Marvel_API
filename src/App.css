@@ -11,6 +11,7 @@
 .navbar {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   padding-right: 50px;
   background-color: whitesmoke;
 }
@@ -21,6 +22,22 @@
   font-size: 18px;
   padding: 10px;
   cursor: pointer;
+}
+.navbar .bookmarked {
+  position: relative;
+}
+.navbar .bookmarked .bookmark_num {
+  position: absolute;
+  top: 0;
+  right: -10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
 }
 
 /*Header*/
@@ -50,6 +67,9 @@
   align-items: center;
   margin-top: 10px;
 }
+.caracters .loading {
+  padding: 30px 0px;
+}
 .caracters .caracters_wrapper {
   display: grid;
   grid-gap: 10px;
@@ -75,8 +95,52 @@
   background-color: lightgray;
 }
 
+/*Bookmarked*/
+.bookmarked {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.bookmarked h1 {
+  text-align: center;
+  font-weight: 200;
+  padding: 20px 0px;
+}
+.bookmarked .no_bookmarked {
+  text-align: center;
+}
+.bookmarked .bookmarked_wrapper {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  margin-top: 10px;
+}
+
+.bookmarked .bookmarked_wrapper .caracter {
+  border: 1px solid gray;
+}
+.bookmarked .bookmarked_wrapper .caracter .name h4 {
+  font-weight: 200;
+  text-align: center;
+}
+.bookmarked .bookmarked_wrapper .caracter .name .delete {
+  background-color: tomato;
+  color: white;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  padding: 5px 0px;
+  margin-top: 10px;
+}
+.bookmarked .bookmarked_wrapper .caracter .name .delete:hover {
+  background-color: rgb(255, 133, 111);
+}
+
 /*Footer*/
 .footer {
+  height: 7vh;
   text-align: center;
   padding: 20px;
   font-size: 20px;

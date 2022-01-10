@@ -5,25 +5,25 @@ const Caracters = ({
   bookmark,
   setBookmark,
   setSearchedCaracter,
-  isLoading
+  isLoading,
 }) => {
   const handleBookmark = (item) => {
-    const exist = bookmark.find(elem => elem.id === item.id);
-    if(exist) {
-        alert("This caracter is already bookmarked!");
+    const exist = bookmark.find((elem) => elem.id === item.id);
+    if (exist) {
+      alert("This caracter is already bookmarked!");
     } else {
-        setBookmark([...bookmark, item]);
+      setBookmark([...bookmark, item]);
     }
   };
 
   return (
     <div className="caracters">
       <SearchInput setSearchedCaracter={setSearchedCaracter} />
-      <div className="caracters_wrapper">
-        {isLoading ? (
-          <h2>Loading...</h2>
-        ) : (
-          caractersData.map((item) => (
+      {isLoading ? (
+        <h1 className="loading">Loading...</h1>
+      ) : (
+        <div className="caracters_wrapper">
+          {caractersData.map((item) => (
             <div key={item.id} className="caracter">
               <div className="picture">
                 <img
@@ -41,9 +41,9 @@ const Caracters = ({
                 </button>
               </div>
             </div>
-          ))
-        )}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
