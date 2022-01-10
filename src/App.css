@@ -4,8 +4,23 @@
   padding: 0;
 }
 .App {
-  /* background-color: rgb(19, 19, 19); */
   min-height: 100vh;
+}
+
+/*Navbar*/
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 50px;
+  background-color: whitesmoke;
+}
+.navbar .link {
+  margin-left: 10px;
+  text-decoration: none;
+  color: inherit;
+  font-size: 18px;
+  padding: 10px;
+  cursor: pointer;
 }
 
 /*Header*/
@@ -30,17 +45,34 @@
 /*Caracters*/
 .caracters {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  margin-top: 20px;
+  align-items: center;
+  margin-top: 10px;
 }
 .caracters .caracters_wrapper {
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
+  margin-top: 10px;
 }
 .caracters .caracters_wrapper .caracter {
-  border: 1px solid black;
+  border: 1px solid gray;
+}
+.caracters .caracters_wrapper .caracter .name h4 {
+  font-weight: 200;
+  text-align: center;
+}
+.caracters .caracters_wrapper .caracter .name button {
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  padding: 5px 0px;
+  margin-top: 10px;
+}
+.caracters .caracters_wrapper .caracter .name button:hover {
+  background-color: lightgray;
 }
 
 /*Footer*/
