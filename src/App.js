@@ -19,7 +19,7 @@ function App() {
       //I have to check if querry is empty or not because the API doesn't work on other way
       if (searchedCaracter) {
         const response = await axios.get(
-          `https://gateway.marvel.com:443/v1/public/characters?name=${searchedCaracter}&apikey=${KEY_PUBLIC}`
+          `https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=${searchedCaracter}&apikey=${KEY_PUBLIC}`
         );
         console.log(response.data.data.results);
         setCaractersData(response.data.data.results);

@@ -138,10 +138,45 @@
   background-color: rgb(255, 133, 111);
 }
 
+/*Pagination*/
+.paginationContainer {
+  display: flex;
+  list-style-type: none;
+  margin: 20px 0px;
+}
+.paginationContainer a {
+  margin: 5px;
+  padding: 8px 10px;
+  font-size: 18px;
+  color: black;
+  border: 2px solid rgb(141, 141, 141);
+  cursor: pointer;
+}
+.paginationContainer a:hover {
+  background-color: lightgray;
+}
+.paginationActive a {
+  background-color: lightgray;
+  color: black;
+  font-weight: bold;
+}
+
 /*Footer*/
 .footer {
   height: 7vh;
   text-align: center;
   padding: 20px;
   font-size: 20px;
+}
+
+@media screen and (max-width: 950px) {
+  .caracters .caracters_wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .caracters .caracters_wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
