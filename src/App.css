@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Poppins";
 }
 .App {
   min-height: 100vh;
@@ -38,6 +39,8 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 /*Header*/
@@ -50,10 +53,10 @@
   width: 300px;
 }
 .search .input_search input {
-  border: 2px solid gray;
+  border: 2px solid lightgray;
   width: 300px;
-  padding: 10px;
-  font-size: 18px;
+  padding: 5px 10px;
+  font-size: 17px;
 }
 .search .input_search input:focus {
   outline: none;
@@ -79,6 +82,13 @@
 }
 .caracters .caracters_wrapper .caracter {
   border: 1px solid gray;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.caracters .caracters_wrapper .caracter .picture img {
+  width: 100%;
 }
 .caracters .caracters_wrapper .caracter .name h4 {
   font-weight: 200;
@@ -116,10 +126,17 @@
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
   margin-top: 10px;
+  margin-bottom: 20px;
 }
-
 .bookmarked .bookmarked_wrapper .caracter {
   border: 1px solid gray;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.bookmarked .bookmarked_wrapper .caracter .picture img {
+  width: 100%;
 }
 .bookmarked .bookmarked_wrapper .caracter .name h4 {
   font-weight: 200;
@@ -146,7 +163,7 @@
 }
 .paginationContainer a {
   margin: 5px;
-  padding: 8px 10px;
+  padding: 4px 10px;
   font-size: 18px;
   color: black;
   border: 2px solid rgb(141, 141, 141);
@@ -161,22 +178,14 @@
   font-weight: bold;
 }
 
-/*Footer*/
-.footer {
-  height: 7vh;
-  text-align: center;
-  padding: 20px;
-  font-size: 20px;
-}
-
 @media screen and (max-width: 950px) {
-  .caracters .caracters_wrapper {
+  .caracters .caracters_wrapper, .bookmarked .bookmarked_wrapper {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media screen and (max-width: 500px) {
-  .caracters .caracters_wrapper {
+  .caracters .caracters_wrapper,  .bookmarked .bookmarked_wrapper {
     grid-template-columns: repeat(1, 1fr);
   }
 }

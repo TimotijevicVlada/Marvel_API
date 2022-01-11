@@ -1,6 +1,8 @@
 import React from "react";
 
 const Bookmarked = ({ bookmark, setBookmark }) => {
+
+  //Function that delete item from the bookmarked page
   const handleDelete = (caracter) => {
     const deleted = bookmark.filter((item) => item.id !== caracter.id);
     setBookmark(deleted);

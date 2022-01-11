@@ -14,6 +14,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [bookmark, setBookmark] = useState([]);
 
+  //Function that fetch data from the Marvel_API
   const getData = useCallback(async () => {
     try {
       //I have to check if querry is empty or not because the API doesn't work on other way
